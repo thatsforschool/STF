@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 27.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1920 222" style="enable-background:new 0 0 1920 222;" xml:space="preserve">
+	<style type="text/css">
+		.st0{stroke:#FFFFFF;stroke-miterlimit:10;}
+		.st1{opacity:0.6;stroke:#FFFFFF;stroke-miterlimit:10;}
+		.st2{opacity:0.2;stroke:#FFFFFF;stroke-miterlimit:10;}
+		.st3{opacity:0.5;stroke:#FFFFFF;stroke-miterlimit:10;}
+		
+		.pulse1 {
+		transform-origin: 50% 50%;
+		animation: pulse1 8000ms ease-in-out infinite;
+		}
+		
+		@keyframes pulse1 {
+		0% {
+		transform: scale(100%, 100%);
+		}
+		50% {
+		transform: scale(110%, 110%);
+		}
+		100% {
+		transform: scale(100%, 100%);
+		}
+		}
+
+		.pulse2 {
+		transform-origin: 50% 50%;
+		animation: pulse2 9000ms ease-in-out infinite;
+		}
+		
+		@keyframes pulse2 {
+		0% {
+		transform: scale(100%, 100%);
+		}
+		50% {
+		transform: scale(115%, 115%);
+		}
+		100% {
+		transform: scale(100%, 100%);
+		}
+		}
+
+		.pulse3 {
+		transform-origin: 50% 50%;
+		animation: pulse3 10000ms ease-in-out infinite;
+		}
+		
+		@keyframes pulse3 {
+		0% {
+		transform: scale(100%, 100%);
+		}
+		50% {
+		transform: scale(120%, 120%);
+		}
+		100% {
+		transform: scale(100%, 100%);
+		}
+		}
+
+		.pulse4 {
+		transform-origin: 50% 50%;
+		animation: pulse4 12000ms ease-in-out infinite;
+		}
+		
+		@keyframes pulse4 {
+		0% {
+		transform: scale(100%, 100%);
+		}
+		50% {
+		transform: scale(110%, 110%);
+		}
+		100% {
+		transform: scale(100%, 100%);
+		}
+		}
+	</style>
+	<g id="Layer_4" class="pulse4">
+		<path class="st0" d="M-142.5,164c25.5,7.6,325.2-58.6,462.3-23c59.6,24.5,116.9,19.7,175.9-3.5c120.4-40.6,425.3,48.2,670.1-6.1
+		c129.6-13.5,344.5,13.1,496.8,65s416.9,16.2,416.9,16.2v251.9h-2222V164z" />
+	</g>
+	<g id="Layer_1" class="pulse1">
+		<path class="st1" d="M0.5,90c22.1,7.6,281-58.6,399.5-23c51.5,24.5,101,19.7,152-3.5c104-40.6,367.5,48.2,579-6.1
+		c112-13.5,297.7,13.1,429.3,65s360.2,16.2,360.2,16.2v251.9H0.5V90z" />
+	</g>
+	<g id="Layer_2" class="pulse2">
+		<path class="st2" d="M-0.5,253.5V16.8c17.4-5.5,108.1-37.6,233.4,4.4c125,30.8,300.6-36.6,372.4,11.3c126,84.1,430-14.9,575.1-17.9
+		s353.8,148.8,488.8,117.7c121.6-28,250.4-88.2,250.4-88.2v236.6" />
+	</g>
+	<g id="Layer_3" class="pulse3">
+		<path class="st3" d="M-113,323V36.3c20.5-7.9,127.2-54.2,274.6,6.4C308.7,87,515.3-10.1,599.8,59c148.3,121.2,506-21.5,676.8-25.7
+		s416.3,214.6,575.2,169.8c143.1-40.4,294.7-127.2,294.7-127.2V344" />
+	</g>
+</svg>
