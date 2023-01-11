@@ -12,7 +12,7 @@
 </template>
 <script>
 export default {
-  name: "newsArtComp",
+  name: "networkComp",
   props: {
     imgUrl: String,
     imgTitle: String,
@@ -22,12 +22,15 @@ export default {
 };
 </script>
 <style scoped>
+section{
+    margin: 20px;
+}
 article {
-  width: 500px;
-  height: 550px;
+  width: 300px;
+  height: 450px;
 }
 img {
-  width: 500px;
+  width: 300px;
   height: 300px;
   object-fit: cover;
 }
@@ -36,7 +39,7 @@ h3 {
 }
 
 .moreArr {
-  margin-left: 400px;
+  margin-left: 200px;
   display: inline-block;
   color: var(--darkBlue);
 }
@@ -48,7 +51,7 @@ h3 {
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 3;
-  width: 500px;
+  width: 300px;
   height: 55px;
   overflow: hidden;
   text-overflow: ellipsis;

@@ -24,6 +24,9 @@ export const useNetworkStore = defineStore("networks", {
                 markdown
               }
               networkRequirements
+              mainImg{
+                url
+              }
             }
           }`,
         }),

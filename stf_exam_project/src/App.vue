@@ -27,7 +27,9 @@
           <section class="navSect">
             <p class="navSectTitle">Association</p>
             <ul class="navDropDown">
-              <li><router-link to="/membership/types">Membership</router-link></li>
+              <li>
+                <router-link to="/membership/types">Membership</router-link>
+              </li>
               <li><router-link to="/network">Network</router-link></li>
               <li><router-link to="/funds">Project Funds</router-link></li>
             </ul>
@@ -117,6 +119,9 @@
           <router-link class="footerLink" to="/news&press"
             >Press & News</router-link
           >
+
+          <router-link class="footerLink" to="/network">Network</router-link>
+
           <router-link class="footerLink" to="/events">Events</router-link>
           <router-link class="footerLink" to="/membership/types"
             >Membership</router-link

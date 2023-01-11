@@ -1,97 +1,21 @@
 <template>
   <div class="home">
-    <h1>Network</h1>
+    <h1>STF Networks</h1>
     <section class="breadCrumbs">
       <router-link class="breadCrumbItem" to="/">Home</router-link>
       <p class="breadCrumbItem">/</p>
-      <router-link class="breadCrumbItem" to="/network"
-        >Network</router-link
-      >
+      <router-link class="breadCrumbItem" to="/network">Network</router-link>
     </section>
     <main>
-      <section class="lastest">
-        <div class="mainNews">
-          <img
-            :src="newsStore.sortedNewsArr[0].articleMainImage.url"
-            :alt="newsStore.sortedNewsArr[0].articleTitle"
-          />
-          <h2>{{ newsStore.sortedNewsArr[0].articleTitle }}</h2>
-          <p class="intro">{{ newsStore.sortedNewsArr[0].articleIntro }}</p>
-          <div
-            class="mainTxt"
-            v-for="section in newsStore.sortedNewsArr[0].mainText"
-            :key="section.id"
-          >
-            <div v-for="text in section.raw.children" :key="text.id">
-              <div v-show="text.type === `paragraph`" class="mainTxt">
-                <div v-for="textIn in text.children" :key="textIn.id">
-                  <p>{{ textIn.text }}</p>
-                  <a
-                    :href="textIn.href"
-                    v-for="textLi in textIn.children"
-                    :key="textLi.id"
-                    >{{ textLi.text }}</a
-                  >
-                </div>
-              </div>
-            </div>
-          </div>
-          <router-link class="moreArr" to="/news&press"
-            >Read more <i class="fa-solid fa-arrow-right"></i>
-          </router-link>
-        </div>
-        <div class="sideNews">
-          <newsArtComp
-            class="sideNews"
-            :imgUrl="newsStore.sortedNewsArr[1].articleMainImage.url"
-            :imgTitle="newsStore.sortedNewsArr[1].articleTitle"
-            :headline="newsStore.sortedNewsArr[1].articleTitle"
-            :intro="newsStore.sortedNewsArr[1].articleIntro"
-            :publicationDate="newsStore.sortedNewsArr[1].publicationDate"
-            :author="newsStore.sortedNewsArr[1].author"
-          />
-        </div>
-      </section>
-      <section
-        class="newsRest"
-        v-for="news in newsStore.restNewsArt"
-        :key="news.id"
-      >
-        <newsArtComp
-          :imgUrl="news.articleMainImage.url"
-          :imgTitle="news.articleTitle"
-          :headline="news.articleTitle"
-          :intro="news.articleIntro"
-          :publicationDate="news.publicationDate"
-          :author="news.author"
-        />
-      </section>
       <section>
-        <h2>Press</h2>
-        <section class="press">
-          <newsArtComp
-            v-for="press in newsStore.sortedPress"
-            :key="press.id"
-            :imgUrl="press.articleMainImage.url"
-            :imgTitle="press.articleTitle"
-            :headline="press.articleTitle"
-            :intro="press.articleIntro"
-            :publicationDate="press.publicationDate"
-            :author="press.author"
-          />
-        </section>
-      </section>
-      <section>
-        <h2>Videos</h2>
-        <section class="videos">
-          <video-comp
-            v-for="video in newsStore.sortedVideos"
-            :key="video.id"
-            :videoLink="video.link"
-            :headline="video.articleTitle"
-            :intro="video.articleIntro"
-            :publicationDate="video.publicationDate"
-            :author="video.author"
+        <section class="network">
+          <networkComp
+            v-for="network in networksStore.networksArr"
+            :key="network.id"
+            :imgUrl="network.mainImg.url"
+            :imgTitle="network.networkName"
+            :headline="network.networkName"
+            :intro="network.networkIntro"
           />
         </section>
       </section>
@@ -99,32 +23,28 @@
   </div>
 </template>
 <script>
-import newsArtComp from "@/components/newsArtComp.vue";
+import networkComp from "@/components/networkComp.vue";
 
 import { useImgStore } from "@/stores/imgsStore";
-import { useNewsStore } from "@/stores/newsStore";
+import { useNetworkStore } from "@/stores/networkStore";
 
 import { mapStores } from "pinia";
-import VideoComp from "../components/videoComp.vue";
 
 export default {
   name: "HomeView",
   data() {
-    return {
-      newsletter: false,
-    };
+    return {};
   },
   components: {
-    newsArtComp,
-    VideoComp,
+    networkComp,
   },
   computed: {
-    ...mapStores(useNewsStore),
+    ...mapStores(useNetworkStore),
     ...mapStores(useImgStore),
   },
   methods: {},
   created() {
-    this.newsStore.getData();
+    this.networksStore.getData();
     this.imgsStore.getData();
   },
 };
@@ -173,9 +93,7 @@ main > section {
   color: var(--blue);
 }
 
-.newsRest,
-.press,
-.videos {
+.network {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
