@@ -4,6 +4,9 @@ export const useMagazineStore = defineStore("magazines", {
   state() {
     return {
       magazinesArr: [],
+      sortedMagazinesArrr: [],
+      lastestMagazine: undefined,
+      magazineYears: [],
     };
   },
   actions: {
@@ -18,6 +21,10 @@ export const useMagazineStore = defineStore("magazines", {
           query: ` 
           query MembersMagazine {
             membersMagazines{
+              tema
+              publicationDate
+              year
+              month
               magazineTitle
               magazineCover {
                 url
@@ -37,8 +44,32 @@ export const useMagazineStore = defineStore("magazines", {
         .then((res) => res.json())
         .then((data) => {
           console.log(data);
-          this.magazinesArr = data;
+          this.magazinesArr = data.data.membersMagazines;
+          this.sortedMagazinesArrr = this.magazinesArr.sort(this.sortDates);
+          console.log("arrSorted");
+          console.log(this.sortedMagazinesArrr);
+
+          this.lastestMagazine = this.sortedMagazinesArrr[0];
+          this.magazineYears = this.getYear(this.sortedMagazinesArrr);
+          console.log(this.magazineYears);
         });
+    },
+    sortDates(a, b) {
+      if (a.publicationDate < b.publicationDate) {
+        return 1;
+      }
+      if (a.publicationDate > b.publicationDate) {
+        return -1;
+      }
+      return 0;
+    },
+    getYear(arr) {
+      const newArr = [];
+      arr.forEach((elm) => {
+        newArr.push(elm.year);
+      });
+      let yearsArr = [...new Set(newArr)];
+      return yearsArr;
     },
   },
   getters: {},

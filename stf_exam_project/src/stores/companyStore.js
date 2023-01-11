@@ -1,14 +1,13 @@
 import { defineStore } from "pinia";
 
-export const useNetworkStore = defineStore("networks", {
+export const useCompanyStore = defineStore("companies", {
   state() {
     return {
-      networksArr: [],
+      companiesArr: [],
     };
   },
   actions: {
     getData() {
-      this.networksArr = ["some", "array"];
       const options = {
         method: "POST",
         headers: {
@@ -16,14 +15,13 @@ export const useNetworkStore = defineStore("networks", {
         },
         body: JSON.stringify({
           query: ` 
-          query STFNetworks{
-            stfNetworks{
-              networkName
-              networkIntro
-              networkArticleText {
-                markdown
+          query StfMemberCompanies {
+            stfMemberCompanies{
+              companyName
+              companyLink
+              companyLogo {
+                url
               }
-              networkRequirements
             }
           }`,
         }),
@@ -34,8 +32,8 @@ export const useNetworkStore = defineStore("networks", {
       )
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
-          this.networksArr = data.data.stfNetworks;
+          this.companiesArr = data.data.stfMemberCompanies;
+          console.log(this.companiesArr);
         });
     },
   },

@@ -1,81 +1,86 @@
-import { createRouter, createWebHashHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
+import { createRouter, createWebHashHistory } from "vue-router";
+import HomeView from "../views/HomeView.vue";
 
 const routes = [
   {
-    path: '/',
-    name: 'home',
-    component: HomeView
+    path: "/",
+    name: "home",
+    component: HomeView,
   },
   {
-    path: '/about',
-    name: 'about',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
+    path: "/about",
+    name: "about",
+    component: () =>
+      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
   },
   {
-    path: '/contact',
-    name: 'contact',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "contact" */ '../views/ContactView.vue')
+    path: "/contact",
+    name: "contact",
+    component: () =>
+      import(/* webpackChunkName: "contact" */ "../views/ContactView.vue"),
   },
   {
-    path: '/events',
-    name: 'events',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "events" */ '../views/EventsView.vue')
+    path: "/events",
+    name: "events",
+    component: () =>
+      import(/* webpackChunkName: "events" */ "../views/EventsView.vue"),
   },
   {
-    path: '/membership',
-    name: 'membership',
+    path: "/membership/:id",
+    name: "membership",
     // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "membership" */ '../views/MembershipView.vue')
+    component: () =>
+      import(
+        /* webpackChunkName: "membership" */ "../views/MembershipView.vue"
+      ),
   },
   {
-    path: '/magazine',
-    name: 'magazine',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "magazine" */ '../views/MembersMagazineView.vue')
+    path: "/magazine/:id",
+    name: "magazine",
+    component: () =>
+      import(
+        /* webpackChunkName: "magazine" */ "../views/MembersMagazineView.vue"
+      ),
   },
   {
-    path: '/network',
-    name: 'network',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "network" */ '../views/NetworkView.vue')
+    path: "/network",
+    name: "network",
+    component: () =>
+      import(/* webpackChunkName: "network" */ "../views/NetworkView.vue"),
   },
   {
-    path: '/news&press',
-    name: 'news&press',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "news&press" */ '../views/News&PressView.vue')
+    path: "/news&press",
+    name: "news&press",
+    component: () =>
+      import(
+        /* webpackChunkName: "news&press" */ "../views/News&PressView.vue"
+      ),
   },
   {
-    path: '/privacy_policy',
-    name: 'privacyPolicy',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "privacyPolicy" */ '../views/PrivacyView.vue')
+    path: "/privacy_policy",
+    name: "privacyPolicy",
+    component: () =>
+      import(
+        /* webpackChunkName: "privacyPolicy" */ "../views/PrivacyView.vue"
+      ),
+  },
+  {
+    path: "/siteMap",
+    name: "siteMap",
+    component: () =>
+      import(/* webpackChunkName: "siteMap" */ "../views/SiteMapView.vue"),
+  },
+  {
+    path: "/funds",
+    name: "funds",
+    component: () =>
+      import(/* webpackChunkName: "siteMap" */ "../views/FundsView.vue"),
   }
-]
+];
 
 const router = createRouter({
   history: createWebHashHistory(),
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;

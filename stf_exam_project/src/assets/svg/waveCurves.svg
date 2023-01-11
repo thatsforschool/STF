@@ -1,28 +1,94 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 27.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 viewBox="0 0 2104.2 388.9" style="enable-background:new 0 0 2104.2 388.9;" xml:space="preserve">
-<style type="text/css">
-	.st0{opacity:0.6;}
-	.st1{opacity:0.5;}
-	.st2{opacity:0.2;}
-</style>
-<g id="Layer_3">
-	<path d="M0,0c701.5,0,1402.7,0,2104.2,0v38c-311.4,8.2-623.1,15.6-933.7,27.5C972.9,73,775.9,85.6,577.3,87.7
-		C413.2,89.4,249.6,82.2,87.6,73L0,68V0z"/>
-</g>
-<g id="Layer_2">
-	<path class="st0" d="M0,31.8c701.5,0,1402.7,0,2104.2,0v135.8l-87.6-7.9c-87.8-7.9-263-23.7-438.5-25.5
-		c-176-1.9-350.3,10.3-526,10.3c-176,0-350.1-12.1-526-12.9c-175.4-0.8-350.6,9.8-438.5,15L0,151.9V31.8z"/>
-</g>
-<g id="Layer_4">
-	<path class="st1" d="M0,0c701.5,0,1402.7,0,2104.2,0v258.9l-87.6-11.5c-87.8-11.7-263-34.8-438.5-42.7
-		c-175.4-7.9-351.9-0.3-526,11.7C878,228.1,702,244.7,526,233c-175.4-11.5-350.6-51.1-438.5-70.9L0,142.3V0z"/>
-</g>
-<g id="Layer_5">
-	<path class="st2" d="M0,69.1c0-18.4,0-36.9,0-55.3C0,9.4,0,5,0,0.6c0-1,107.6-0.5,119.1-0.5c220.7,0,441.1,0,661.8,0
+<!-- Generator: Adobe Illustrator 27.1.1, SVG Export Plug-In . SVG Version: 6.00 Build 0) -->
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 2104.2 388.9" style="enable-background:new 0 0 2104.2 388.9;" xml:space="preserve">
+	<style type="text/css">
+		.st0{opacity:0.6;}
+		.st1{opacity:0.5;}
+		.st2{opacity:0.2;}
+		.pulse1 {
+		transform-origin: 50% 50%;
+		animation: pulse1 8000ms ease-in-out infinite;
+		}
+		
+		@keyframes pulse1 {
+		0% {
+		transform: scale(100%, 100%);
+		}
+		50% {
+		transform: scale(110%, 110%);
+		}
+		100% {
+		transform: scale(100%, 100%);
+		}
+		}
+		
+		.pulse2 {
+		transform-origin: 50% 50%;
+		animation: pulse2 9000ms ease-in-out infinite;
+		}
+		
+		@keyframes pulse2 {
+		0% {
+		transform: scale(100%, 100%);
+		}
+		50% {
+		transform: scale(115%, 115%);
+		}
+		100% {
+		transform: scale(100%, 100%);
+		}
+		}
+		
+		.pulse3 {
+		transform-origin: 50% 50%;
+		animation: pulse3 10000ms ease-in-out infinite;
+		}
+		
+		@keyframes pulse3 {
+		0% {
+		transform: scale(100%, 100%);
+		}
+		50% {
+		transform: scale(120%, 120%);
+		}
+		100% {
+		transform: scale(100%, 100%);
+		}
+		}
+		
+		.pulse4 {
+		transform-origin: 50% 50%;
+		animation: pulse4 9000ms ease-in-out infinite;
+		}
+		
+		@keyframes pulse4 {
+		0% {
+		transform: scale(100%, 100%);
+		}
+		50% {
+		transform: scale(110%, 110%);
+		}
+		100% {
+		transform: scale(100%, 100%);
+		}
+		}
+	</style>
+	<g id="Layer_3" class="pulse1">
+		<path d="M0,0c701.5,0,1402.7,0,2104.2,0v38c-311.4,8.2-623.1,15.6-933.7,27.5C972.9,73,775.9,85.6,577.3,87.7
+		C413.2,89.4,249.6,82.2,87.6,73L0,68V0z" />
+	</g>
+	<g id="Layer_2" class="pulse2">
+		<path class="st0" d="M0,31.8c701.5,0,1402.7,0,2104.2,0v135.8l-87.6-7.9c-87.8-7.9-263-23.7-438.5-25.5
+		c-176-1.9-350.3,10.3-526,10.3c-176,0-350.1-12.1-526-12.9c-175.4-0.8-350.6,9.8-438.5,15L0,151.9V31.8z" />
+	</g>
+	<g id="Layer_4" class="pulse3">
+		<path class="st1" d="M0,0c701.5,0,1402.7,0,2104.2,0v258.9l-87.6-11.5c-87.8-11.7-263-34.8-438.5-42.7
+		c-175.4-7.9-351.9-0.3-526,11.7C878,228.1,702,244.7,526,233c-175.4-11.5-350.6-51.1-438.5-70.9L0,142.3V0z" />
+	</g>
+	<g id="Layer_5" class="pulse4">
+		<path class="st2" d="M0,69.1c0-18.4,0-36.9,0-55.3C0,9.4,0,5,0,0.6c0-1,107.6-0.5,119.1-0.5c220.7,0,441.1,0,661.8,0
 		c441.1,0,882.2,0,1323.3,0V382l-87.6,3.6c-114.7,4.6-230.4,5.5-343.2-5.4c-135.5-13.1-250.4-43.4-364-72.9
 		c-114.2-29.8-228.6-57.6-367.2-66.9c-137.6-9.3-278.8-5.5-416.1-15.7c-175.4-12.9-350.6-51-438.5-70L0,135.7C0,113.5,0,91.3,0,69.1
-		z"/>
-</g>
+		z" />
+	</g>
 </svg>

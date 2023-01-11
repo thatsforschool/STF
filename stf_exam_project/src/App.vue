@@ -1,5 +1,10 @@
 <template>
   <div>
+    <div class="cover" v-show="newsletter"></div>
+    <article class="newsletterWindow" v-show="newsletter">
+      <button class="closeBtn" @click="newsletter = !newsletter">x</button>
+      <newsletterFormComp />
+    </article>
     <div class="headerSvgMask headerWave"></div>
     <header>
       <section class="basicNav navPart">
@@ -12,7 +17,9 @@
             <ul class="navDropDown">
               <li><router-link to="/news&press">News & Press</router-link></li>
               <li>
-                <router-link to="/magazine">Members Magazine</router-link>
+                <router-link to="/magazine/publications"
+                  >Members Magazine</router-link
+                >
               </li>
               <li><router-link to="/events">Events</router-link></li>
             </ul>
@@ -20,9 +27,9 @@
           <section class="navSect">
             <p class="navSectTitle">Association</p>
             <ul class="navDropDown">
-              <li><router-link to="/membership">Membership</router-link></li>
+              <li><router-link to="/membership/types">Membership</router-link></li>
               <li><router-link to="/network">Network</router-link></li>
-              <li>project funds</li>
+              <li><router-link to="/funds">Project Funds</router-link></li>
             </ul>
           </section>
           <section class="navSect">
@@ -35,8 +42,10 @@
         </nav>
       </section>
       <section class="addNav navPart">
-        <button class="newsletter btn">Sign up to Newsletter</button>
-
+        <buttonComp
+          buttonText="Sign up to Newsletter"
+          @click="newsletter = !newsletter"
+        />
         <section class="navTopSo">
           <section class="soMeSect">
             <a
@@ -71,9 +80,10 @@
       </section>
     </header>
     <router-view />
-    <a href="header" class="arrTop">&#x2191;</a>
+
     <div class="wave svgMask"></div>
     <footer>
+      <a href="header" class="arrTop"><i class="fa-solid fa-arrow-up"></i></a>
       <section class="footerContent">
         <section class="footerSect">
           <address>
@@ -104,14 +114,14 @@
         </section>
         <section class="footerSect">
           <router-link class="footerLink" to="/about">About STF</router-link>
-          <router-link class="footerLink" to="/press&news"
+          <router-link class="footerLink" to="/news&press"
             >Press & News</router-link
           >
           <router-link class="footerLink" to="/events">Events</router-link>
-          <router-link class="footerLink" to="/membership"
+          <router-link class="footerLink" to="/membership/types"
             >Membership</router-link
           >
-          <router-link class="footerLink" to="/magazine"
+          <router-link class="footerLink" to="/magazine/publications"
             >Members Magazine</router-link
           >
           <router-link class="footerLink" to="/contact">Contact Us</router-link>
@@ -121,41 +131,31 @@
           >
         </section>
         <section class="footerSect">
-          <form action="#" class="newsletter">
-            <h4 class="formItem">Newsletter</h4>
-            <label class="formItem" for="email">Email Address</label>
-            <input
-              class="formItem"
-              type="text"
-              name="email"
-              placeholder="email address"
-            />
-            <label class="formItem" for="fName">First Name</label>
-            <input
-              class="formItem"
-              type="text"
-              name="fName"
-              placeholder="first name"
-            />
-            <label class="formItem" for="lName">Last Name</label>
-            <input
-              class="formItem"
-              type="text"
-              name="lName"
-              placeholder="Last Name"
-            />
-            <div class="formItem radioBtn">
-              <input type="checkbox" name="radioBtn" />
-              <label for="radioBtn"
-                >Yes, I accept Spildevandsteknisk Forening's <br />
-                <router-link to="/privacy_policy" class="privacyNewsletter"
-                  >privacy policy</router-link
-                >
-                *</label
-              >
-            </div>
-            <button class="formItem btn">Submit</button>
-          </form>
+          <newsletterFormComp />
+          <section class="footerSoMe">
+            <a
+              target="_blank"
+              href="https://www.linkedin.com/company/spildevandsteknisk-forening/"
+              ><i class="fa fa-linkedin-square SoMeIcon"></i
+            ></a>
+            <a
+              target="_blank"
+              href="https://www.facebook.com/spildevandstekniskforening"
+            >
+              <i class="fa fa-facebook-f SoMeIcon"></i
+            ></a>
+            <a
+              target="_blank"
+              href="https://www.instagram.com/spildevandstekniskforening/"
+              ><i class="fa fa-instagram SoMeIcon"></i
+            ></a>
+            <a
+              target="_blank"
+              href="https://www.youtube.com/channel/UC7WQiVsFaolRIiz7xdXnJlQ"
+            >
+              <i class="fa fa-youtube-play SoMeIcon"></i
+            ></a>
+          </section>
         </section>
       </section>
       <p class="copyright">
@@ -165,7 +165,22 @@
     </footer>
   </div>
 </template>
-
+<script>
+import newsletterFormComp from "@/components/newsletterComp.vue";
+import buttonComp from "@/components/buttonComp.vue";
+export default {
+  name: "app",
+  components: {
+    newsletterFormComp,
+    buttonComp,
+  },
+  data() {
+    return {
+      newsletter: false,
+    };
+  },
+};
+</script>
 <style>
 :root {
   --darkBlue: #10069f;
@@ -194,17 +209,27 @@
   -moz-osx-font-smoothing: grayscale;
   color: var(--black);
 }
+h1 {
+  font-size: 2rem;
+}
+.home {
+  padding: 50px 350px;
+}
 
 .arrTop {
   position: fixed;
   z-index: 12;
   left: 94vw;
   top: 90vh;
-  padding: 0 20px;
-  border-radius: 50px;
+  text-align: center;
+  padding: 7px 0;
+  box-sizing: border-box;
+  width: 50px;
+  height: 50px;
+  border-radius: 90px;
   background-color: var(--yellow);
   color: var(--black);
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: 800;
   text-decoration: none;
 }
@@ -220,7 +245,40 @@ form {
 }
 
 body {
-  margin:0;
+  margin: 0;
+}
+
+.cover {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: var(--black);
+  opacity: 0.3;
+  z-index: 15;
+}
+
+.closeBtn {
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: none;
+  margin: 0 350px;
+}
+.closeBtn:hover {
+  cursor: pointer;
+}
+.newsletterWindow {
+  position: fixed;
+  top: calc(50vh - 250px);
+  left: calc(50vw - 250px);
+  right: calc(50vw - 250px);
+  height: 500px;
+  width: 500px;
+  z-index: 20;
+  background-color: var(--yellow25);
+  padding: 20px 60px;
+  box-sizing: border-box;
 }
 
 .headerSvgMask {
@@ -236,7 +294,9 @@ body {
 .headerWave {
   background-color: var(--blue);
   height: 400px;
-  width: 100vw;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 header {
@@ -291,7 +351,6 @@ nav {
 
 .navSect a,
 .footerLink {
-  font-weight: bold;
   color: var(--black);
   margin: 20px 20px;
   display: inline-block;
@@ -299,12 +358,12 @@ nav {
 }
 
 .navSect a {
-  border-bottom: var(--blue) 2px solid;
   text-decoration: none;
 }
 footer a {
   font-weight: bold;
   color: var(--black);
+  font-weight: bold;
 }
 
 .footerLink:hover {
@@ -313,6 +372,8 @@ footer a {
 
 nav a:hover {
   color: var(--blue);
+  font-weight: bold;
+  border-bottom: var(--blue) 2px solid;
 }
 
 nav a.router-link-exact-active {
@@ -334,12 +395,12 @@ nav a.router-link-exact-active {
   text-align: center;
   width: 183px;
   transition: 0.2s ease-in-out;
-  border-bottom: var(--blue) 2px solid;
 }
 
 .navSectTitle:hover {
   color: var(--darkBlue);
   cursor: pointer;
+  border-bottom: var(--darkBlue) 2px solid;
 }
 
 .navSect:hover > .navDropDown {
@@ -437,19 +498,6 @@ nav a.router-link-exact-active {
   flex-direction: column;
 }
 
-.formItem {
-  margin: 10px 20px;
-}
-
-form > input {
-  padding: 10px;
-  border: none;
-}
-
-form button {
-  place-self: center;
-}
-
 footer {
   padding: 0px 250px 50px 250px;
   background-color: var(--blue);
@@ -497,5 +545,13 @@ footer {
   color: var(--black);
   margin: 20px 5px;
   font-style: italic;
+}
+
+.footerSoMe {
+  margin: 20px;
+  width: 180px;
+  display: flex;
+  justify-content: space-between;
+  place-self: center;
 }
 </style>
