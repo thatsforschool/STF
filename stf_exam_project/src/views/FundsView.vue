@@ -96,8 +96,10 @@
             <a href="mailto:sek@stf.dk">sek@stf.dk</a>
           </p>
           <div class="links">
-            <a href="">You will find the application form here.</a
-            ><a href=""
+            <a :href="imgsStore.appForm.img.url"
+              >You will find the application form here
+              <i class="fa-solid fa-arrow-right"></i></a
+            ><a :href="imgsStore.prevAct.img.url"
               >See a list of previously supported projects
               <i class="fa-solid fa-arrow-right"></i
             ></a>
@@ -107,6 +109,33 @@
     </section>
   </div>
 </template>
+<script>
+// @ is an alias to /src
+
+import { useImgStore } from "@/stores/imgsStore";
+import { mapStores } from "pinia";
+
+export default {
+  name: "HomeView",
+  data() {
+    return {
+      pageId: undefined,
+    };
+  },
+  components: {},
+  computed: {
+    ...mapStores(useImgStore),
+  },
+  methods: {
+    changePage(value) {
+      this.pageId = value;
+    },
+  },
+  created() {
+    this.imgsStore.getData();
+  },
+};
+</script>
 <style scoped>
 .privacy {
   margin: 50px 250px;
@@ -139,12 +168,16 @@ h3 {
   margin: 40px 0 0 0;
 }
 
-.links{
+.links {
   display: flex;
   flex-direction: column;
 }
-.links > a{
- font-weight: bold;
- margin: 20px 0;
+.links > a {
+  font-weight: bold;
+  margin: 20px 0;
+  color: var(--black);
+}
+.links > a:hover {
+  color: var(--darkBlue);
 }
 </style>

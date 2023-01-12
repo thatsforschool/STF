@@ -11,6 +11,8 @@ export const useImgStore = defineStore("imgs", {
       heroImg: undefined,
       regForm: undefined,
       logo: undefined,
+      appForm: undefined,
+      prevAct: undefined,
     };
   },
   actions: {
@@ -61,6 +63,14 @@ export const useImgStore = defineStore("imgs", {
             if (img.imgId === "bubblesLogo") {
               this.logo = img;
               console.log(this.logo);
+            }
+            if (img.imgId === "applicationActivityPool") {
+              this.appForm = img;
+              console.log(this.appForm);
+            }
+            if (img.imgId === "previousActivites") {
+              this.prevAct = img;
+              console.log(this.prevAct);
             }
           });
           console.log(this.networkingImg);

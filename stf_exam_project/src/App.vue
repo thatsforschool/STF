@@ -37,8 +37,9 @@
           <section class="navSect">
             <p class="navSectTitle">STF</p>
             <ul class="navDropDown">
-              <li><router-link to="/about">About</router-link></li>
-              <li><router-link to="/contact">Contact</router-link></li>
+              <li><router-link to="/contact/about">About</router-link></li>
+              <li><router-link to="/contact/form">Contact</router-link></li>
+              <li><router-link to="/contact/staff">Staff</router-link></li>
             </ul>
           </section>
         </nav>
@@ -115,7 +116,9 @@
           </address>
         </section>
         <section class="footerSect">
-          <router-link class="footerLink" to="/about">About STF</router-link>
+          <router-link class="footerLink" to="/contact/about"
+            >About STF</router-link
+          >
           <router-link class="footerLink" to="/news&press"
             >Press & News</router-link
           >
@@ -129,7 +132,12 @@
           <router-link class="footerLink" to="/magazine/publications"
             >Members Magazine</router-link
           >
-          <router-link class="footerLink" to="/contact">Contact Us</router-link>
+          <router-link class="footerLink" to="/contact/form"
+            >Contact Us</router-link
+          >
+          <router-link class="footerLink" to="/contact/staff"
+            >Staff</router-link
+          >
           <router-link class="footerLink" to="/siteMap">Site Map</router-link>
           <router-link to="/privacy_policy" class="footerLink"
             >Privacy Policy</router-link
@@ -287,18 +295,18 @@ body {
 }
 
 .headerSvgMask {
-  -webkit-mask-image: url(@/assets/svg/waveCurves.svg);
+  -webkit-mask-image: url(@/assets/svg/wave7.svg);
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-size: cover;
 
-  mask-image: url(@/assets/svg/waveCurves.svg);
+  mask-image: url(@/assets/svg/wave7.svg);
   mask-repeat: no-repeat;
   mask-size: cover;
 }
 
 .headerWave {
   background-color: var(--blue);
-  height: 400px;
+  height: 300px;
   width: 100%;
   margin: 0;
   padding: 0;
